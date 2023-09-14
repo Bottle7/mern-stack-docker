@@ -1,0 +1,27 @@
+FROM node:20-bullseye-slim as build
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+
+# Copy everything (except .dockerignore)
+COPY . .
+
+RUN npm i
+
+RUN npm run build
+
+#
+# Stage 2
+#
+FROM node:20-bullseye-slim
+
+WORKDIR /app
+
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/build .
+
+EXPOSE 3000
+
+CMD ["node", "app.js"]
+

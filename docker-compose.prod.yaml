@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: .docker/Dockerfile.prod
+    ports:
+      - '8080:8080'
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: .docker/Dockerfile.prod
+    environment:
+      MONGO_URI: mongodb://db:27017/exampledb
+    ports:
+      - '3000:3000'
+    networks:
+      - app-network
+
+  db:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: exampledb
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data/db:/data/db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db: {}
+
