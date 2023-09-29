@@ -1,5 +1,11 @@
 # MERN Stack Docker Artifacts
 
+> #### Notes:
+>
+> - Make sure you have docker installed and running
+> - Run the scripts from the root directory of the project
+
+
 ## How it works
 
 ### Setup
@@ -12,11 +18,6 @@ npm run setup
 ```
 
 ### Spinning up the containers
-
-> #### Notes:
->
-> - Make sure you have docker installed and running
-> - Run the scripts from the root directory of the project
 
 
 #### Want to develop?
