@@ -2,6 +2,8 @@
 
 ## How it works
 
+### Setup
+
 1. Clone the repository
 
 2. Install all dependencies
@@ -9,15 +11,15 @@
 npm run setup
 ```
 
-3.
+### Spinning up the containers
 
-### Want to develop?
+#### Want to develop?
 
 ```bash
 npm run dev
 ```
 
-### Want to run in production?
+#### Want to run in production?
 
 ```bash
 npm run prod
