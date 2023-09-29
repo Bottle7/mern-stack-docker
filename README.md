@@ -4,8 +4,21 @@
 
 1. Clone the repository
 
-2. Run `npm run setup` to install all dependencies
+2. Install all dependencies
+```bash
+npm run setup
+```
 
-3. a. Run `npm run dev` to start the development server
+3.
 
-3. b. Run `npm run prod` to build the production version
+### Want to develop?
+
+```bash
+npm run dev
+```
+
+### Want to run in production?
+
+```bash
+npm run prod
+```
